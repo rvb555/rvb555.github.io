@@ -1,0 +1,26 @@
+.p-box{
+    width: 800px;
+    height: 500px;
+    border: 1px solid #000;
+    margin-left: 20px;
+
+}
+
+
+.skyies{
+    width: 250px;
+    height: 400px;
+    margin: 10;
+    
+    border-color: rgb(42, 165, 58);
+    border-width: 2px;
+    border-style: double;
+
+
+}
+.skyies1{
+    width: 200px;
+    height: 300px;
+    object-fit: fill;  
+    
+}
