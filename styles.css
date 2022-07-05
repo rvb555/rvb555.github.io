@@ -52,7 +52,7 @@ nav{
     background-color: #f4f4f4;
     padding:20px;  
     position: sticky;
-    top: 50px;
+    top: 0px;
 }
 
 nav ul{
@@ -183,10 +183,6 @@ nav li a:hover{
     }
 
     
-   
-
-
-
 
 @media screen and (max-width:490px){
     
