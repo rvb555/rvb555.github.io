@@ -1,72 +1,431 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-    <head>
-        <title>B1L41</title> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="shortcut icon" type="image/x-icon" href="img/rvb555.JPG">
-        
-       
-    </head>
-    <body>
-        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roldan V. Bijis - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
 
-        <header>
-            <h1>Mario Club989898</h1>
-        </header>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
 
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
 
-        <section class="banner">
-            <img src="img/mario3.PNG" alt="marioface" width = 100% >
-            <div class="welcome">
-                <h2>Welcome to <br> <span>Marioclub</span></h2>
-            </div>
-        </section>
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
 
+        nav {
+            background: #2c3e50;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
 
-        <nav class="main-nav">
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3498db;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #f4f4f4;
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f4f4f4;
+        }
+
+        .skill-category ul li:before {
+            content: "▸ ";
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .project-description {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: #e7f4ff;
+            color: #3498db;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #2980b9;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+           
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+           
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Roldan V. Bijis</h1>
+            <p>Senior Software Engineer & Systems Developer</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
             <ul>
-                <li><a href="/join.html">Join the club</a></li>
-                <li><a href="/news.html">News on the club</a></li>
-                <li><a href="/games.html">Available games</a></li>
-                <li><a href="/contact.html">Contact us</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
 
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <!-- Add your profile picture here -->
+                <!-- <img src="profile.jpg" alt="Roldan Bijis" class="profile-img"> -->
+                <div class="about-text">
+                    <p>I am a seasoned Electronics and Communications Engineer with over 20 years of experience in software development, system integration, and process optimization. My career spans across manufacturing, maritime, and electronics industries where I've developed innovative solutions to complex technical challenges.</p>
+                    <p>I specialize in creating efficient systems that bridge hardware and software, with expertise in Python, SQL, C++, network administration, and database management. My work has resulted in significant improvements in productivity, cost savings, and system reliability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>SQL</li>
+                        <li>VBA</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Systems & Databases</h3>
+                    <ul>
+                        <li>Database Administration</li>
+                        <li>Network Design & Administration</li>
+                        <li>Active Directory</li>
+                        <li>System Integration</li>
+                        <li>Server Management</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Engineering & Manufacturing</h3>
+                    <ul>
+                        <li>Process Integration</li>
+                        <li>Test Engineering</li>
+                        <li>Quality Control Systems</li>
+                        <li>Firmware Control</li>
+                        <li>Production Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Software Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Centralized Test Program System</h3>
+                        <p class="project-description">A system to upload/update test programs from individual desktop PCs to central server, eliminating waiting time and reducing virus risks.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Network Programming</span>
+                        </div>
+                        <a href="downloads/test_program_system.zip" class="download-btn">Download Program</a>
+                    </div>
+                </div>
+               
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Database Normalization Tool</h3>
+                        <p class="project-description">Tool that reduced server disk space by 95% and improved upload TAT by 75% through efficient data normalization.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Database Optimization</span>
+                        </div>
+                        <a href="downloads/db_normalization_tool.zip" class="download-btn">Download Program</a>
+                    </div>
+                </div>
+               
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Network Monitoring System</h3>
+                        <p class="project-description">Time synchronization and network status monitoring system for production line host PCs supporting TQS-DFA systems.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Network Administration</span>
+                        </div>
+                        <a href="downloads/network_monitor.zip" class="download-btn">Download Program</a>
+                    </div>
+                </div>
+               
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Automated Test Parameter System</h3>
+                        <p class="project-description">Centralized system for automating test program initialization parameters, eliminating manual errors and production losses.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                        <a href="downloads/test_parameter_system.zip" class="download-btn">Download Program</a>
+                    </div>
+                </div>
+               
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Host PC Port Expansion</h3>
+                        <p class="project-description">Increased host PC test port capacity from 28 to 35 ports, resulting in significant cost savings and setup reduction.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">System Optimization</span>
+                        </div>
+                        <a href="downloads/port_expansion_tool.zip" class="download-btn">Download Program</a>
+                    </div>
+                </div>
+               
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Firmware Update Automation</h3>
+                        <p class="project-description">Automated firmware update system with 95% improvement in turnaround time and elimination of manual installation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Batch Scripting</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                        <a href="downloads/firmware_updater.zip" class="download-btn">Download Program</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <main>
-            <article>
-                <h2>It's me, Mario</h2>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit eos excepturi animi ex dolores sit ut at eaque repudiandae voluptatibus porro earum obcaecati, voluptatum natus reprehenderit doloremque? Ipsa, quasi quae! Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptatem nemo est laudantium, suscipit obcaecati voluptatibus. Voluptas eligendi sit voluptatem architecto labore impedit nemo rerum! Corporis ipsum assumenda ipsa modi. Lorem ipsum dolor sit lorem amet constione laboriosam quasi a e.ligendi Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, quo? Laborum harum ullam ipsa unde iusto. Voluptatibus nostrum aut, quaerat hic nam dicta vero incidunt, ipsam, asperiores cupiditate dolores odio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi nulla nam, aspernatur soluta, hic pariatur amet magni officiis libero sint harum optio illum ullam dolorum eveniet vel minima voluptatem voluptates.</p>
-            </article>
-            <ul class="images">
-                <li><img src="img/supermarioworld.PNG" alt="supermarioworld"></li>
-                <li><img src="img/mariolive.PNG" alt="mariolive"></li>
-            </ul>
-        </main>
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i>📧</i>
+                    <h3>Email</h3>
+                    <p>roldanbijis@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i>📱</i>
+                    <h3>Phone</h3>
+                    <p>+63 917 714 6592</p>
+                </div>
+                <div class="contact-item">
+                    <i>🏠</i>
+                    <h3>Location</h3>
+                    <p>Calamba City, Laguna, Philippines</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-
-
-        <section class="join">
-            <h2>Join Today!</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisi</p>
-            <form >
-                <input type="email" name="email" placeholder="type your email" required>
-            </form>        
-        </section>
-       
-        
-
-
-        <footer>
-           <p class="copyright">copyright 2022 Marioclub</p>
-       </footer>   
-      <!-- Write your comments here -->
-    </body>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Roldan V. Bijis. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>
+
+
