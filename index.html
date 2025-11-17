@@ -64,10 +64,13 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
         }
 
         nav ul li a:hover {
             color: #3498db;
+            background: rgba(255,255,255,0.1);
         }
 
         section {
@@ -186,17 +189,52 @@
 
         .download-btn {
             display: inline-block;
-            background: #3498db;
+            background: #95a5a6;
             color: white;
             padding: 0.7rem 1.5rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 500;
-            transition: background 0.3s;
+            cursor: not-allowed;
+            opacity: 0.7;
+            position: relative;
         }
 
-        .download-btn:hover {
-            background: #2980b9;
+        /* Tooltip styles */
+        .download-btn::before {
+            content: "Please contact me via email to request the program";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c3e50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 10;
+        }
+
+        .download-btn::after {
+            content: "";
+            position: absolute;
+            bottom: calc(100% - 5px);
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #2c3e50;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .download-btn:hover::before,
+        .download-btn:hover::after {
+            opacity: 1;
         }
 
         .contact-info {
@@ -227,19 +265,87 @@
             padding: 2rem 0;
         }
 
+        /* Enhanced Mobile Navigation */
         @media (max-width: 768px) {
             .about-content {
                 flex-direction: column;
                 text-align: center;
             }
-           
+            
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            nav ul li {
+                margin: 0.25rem;
+            }
+            
+            nav ul li a {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.9rem;
+                display: block;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Landscape orientation improvements */
+        @media (max-width: 768px) and (orientation: landscape) {
+            nav ul {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 0.5rem 0;
+            }
+            
+            nav ul li {
+                flex-shrink: 0;
+            }
+            
+            nav ul li a {
+                white-space: nowrap;
+            }
+
+            header {
+                padding: 2rem 0;
+            }
+
+            section {
+                padding: 2rem 0;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
             nav ul {
                 flex-direction: column;
                 align-items: center;
             }
-           
+            
             nav ul li {
-                margin: 0.5rem 0;
+                margin: 0.3rem 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                width: 100%;
             }
         }
     </style>
@@ -311,6 +417,16 @@
                         <li>Production Optimization</li>
                     </ul>
                 </div>
+                <div class="skill-category">
+                    <h3>Surveillance Systems</h3>
+                    <ul>
+                        <li>CCTV Analog Systems</li>
+                        <li>IP Camera Systems</li>
+                        <li>Surveillance System Installation</li>
+                        <li>Network Video Configuration</li>
+                        <li>Security System Integration</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -327,10 +443,10 @@
                             <span class="tech-tag">C++</span>
                             <span class="tech-tag">Network Programming</span>
                         </div>
-                        <a href="downloads/test_program_system.zip" class="download-btn">Download Program</a>
+                        <a class="download-btn">Download Program</a>
                     </div>
                 </div>
-               
+                
                 <div class="project-card">
                     <div class="project-content">
                         <h3 class="project-title">Database Normalization Tool</h3>
@@ -340,10 +456,10 @@
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Database Optimization</span>
                         </div>
-                        <a href="downloads/db_normalization_tool.zip" class="download-btn">Download Program</a>
+                        <a class="download-btn">Download Program</a>
                     </div>
                 </div>
-               
+                
                 <div class="project-card">
                     <div class="project-content">
                         <h3 class="project-title">Network Monitoring System</h3>
@@ -352,10 +468,10 @@
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Network Administration</span>
                         </div>
-                        <a href="downloads/network_monitor.zip" class="download-btn">Download Program</a>
+                        <a class="download-btn">Download Program</a>
                     </div>
                 </div>
-               
+                
                 <div class="project-card">
                     <div class="project-content">
                         <h3 class="project-title">Automated Test Parameter System</h3>
@@ -365,10 +481,10 @@
                             <span class="tech-tag">C++</span>
                             <span class="tech-tag">Automation</span>
                         </div>
-                        <a href="downloads/test_parameter_system.zip" class="download-btn">Download Program</a>
+                        <a class="download-btn">Download Program</a>
                     </div>
                 </div>
-               
+                
                 <div class="project-card">
                     <div class="project-content">
                         <h3 class="project-title">Host PC Port Expansion</h3>
@@ -377,10 +493,10 @@
                             <span class="tech-tag">C++</span>
                             <span class="tech-tag">System Optimization</span>
                         </div>
-                        <a href="downloads/port_expansion_tool.zip" class="download-btn">Download Program</a>
+                        <a class="download-btn">Download Program</a>
                     </div>
                 </div>
-               
+                
                 <div class="project-card">
                     <div class="project-content">
                         <h3 class="project-title">Firmware Update Automation</h3>
@@ -390,7 +506,7 @@
                             <span class="tech-tag">Batch Scripting</span>
                             <span class="tech-tag">Automation</span>
                         </div>
-                        <a href="downloads/firmware_updater.zip" class="download-btn">Download Program</a>
+                        <a class="download-btn">Download Program</a>
                     </div>
                 </div>
             </div>
@@ -427,5 +543,3 @@
     </footer>
 </body>
 </html>
-
-
